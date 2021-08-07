@@ -1,17 +1,12 @@
 {
-    "LauncherVersion": 
-        {
-            "Major": 0,
-            "Minor": 0,
-            "Patch": 1
-        },
+    "Launcher": 
+    {
+        "Version": "0.0.1",
+        "URL": "TODO"
+    },
     "MortisCausa":
     {
-        "Version":
-        {
-            "Major": 1,
-            "Minor": 0,
-            "Patch": 0
-        }
+        "Version": "1.0.0",
+        "URL": "TODO"
     }
 }
