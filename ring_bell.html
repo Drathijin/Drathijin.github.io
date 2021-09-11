@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Ring</title>
+</head>
+<body>
+    <div class="centerBox">
+        <button id="reset"></button>
+        <h1 class="status"> Lorem.</h1>
+        <h1 class="clock">3:00</h1>
+    </div>
+    <audio id="audio" src="boxing-bell.mp3"></audio>
+    <script>
+        const fightTime = 60*3;
+        const restTime = 60;        
+        
+        let rest  = false;
+        let count = 1;
+        let clock = document.querySelector(".clock");
+        let status = document.querySelector(".status");
+        let box = document.querySelector(".centerBox");
+        let audio = document.getElementById("audio");
+        let reset = document.getElementById("reset");
+        reset.onclick = ()=>{audio.play(); audio.pause(); rest = true; count = 0}
+        window.setInterval(()=>{
+            count--;
+            if(count<=0)
+            {
+                audio.play();
+                rest = !rest;
+                count = rest ? restTime : fightTime;
+                status.innerText = rest ? "Rest" : "Fight"; 
+                box.style.setProperty("--color", `${rest?"var(--marigold)":"var(--deep-champagne)"}`)
+            }
+            clock.innerText = `${String(parseInt(count/60)).padStart(2, '0')}:${String(count%60).padStart(2, '0')}`;
+        },1000);
+
+
+    </script>
+</body>
+</html>

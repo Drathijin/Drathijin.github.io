@@ -1,0 +1,47 @@
+:root {
+  --rose-madder: #db2b39ff;
+  --space-cadet: #29335cff;
+  --marigold: #f3a712ff;
+  --deep-champagne: #f0cea0ff;
+  --dark-lava: #534d41ff;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--rose-madder);
+}
+h1 {
+  font-size: 5rem;
+  font-family: sans-serif;
+}
+.centerBox {
+  --color: var(--deep-champagne);
+  text-align: center;
+  color: var(--color);
+  border: var(--color) 0.5rem solid;
+  padding: 2rem;
+  border-radius: 5rem;
+}
+.status {
+  font-size: 3rem;
+  font-style: italic;
+  padding: 1rem;
+}
+button {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 1rem;
+  border: none;
+  background-color: var(--color);
+}
