@@ -1,12 +1,10 @@
 {
-    "Launcher": 
-    {
-        "Version": "0.0.1",
-        "URL": "TODO"
-    },
-    "MortisCausa":
-    {
-        "Version": "1.0.0",
-        "URL": "TODO"
-    }
+  "Launcher": {
+    "Version": "0.0.1",
+    "URL": "https://drathijin.github.io/builds/launcher/0.0.1.zip"
+  },
+  "MortisCausa": {
+    "Version": "1.0.0",
+    "URL": "TODO"
+  }
 }

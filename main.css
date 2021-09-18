@@ -1,0 +1,79 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: grid;
+  min-height: 100vh;
+  width: 100%;
+  grid-template-columns: 1fr 10fr 1fr;
+  grid-template-rows: 1fr 5fr 1fr;
+  grid-template-areas:
+    "header header header"
+    "...... main ........"
+    "footer footer footer";
+}
+header {
+  grid-area: header;
+  display: grid;
+  place-items: center;
+  padding: 1em;
+  background-color: lightblue;
+}
+#title {
+  gap: 0;
+}
+header > #title > a {
+  font-size: 5rem;
+  text-decoration: none;
+  color: #000;
+  position: relative;
+  margin-right: 0;
+  padding-right: 0;
+}
+
+header > #title :nth-child(1)::after {
+  transform-origin: right;
+}
+
+header > #title :nth-child(2)::after {
+  transform-origin: left;
+}
+
+header > #title :nth-child(2) {
+  color: #ff0000;
+  font-style: italic;
+  margin-left: 0;
+  padding-left: 0;
+}
+header > #title > a::after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  height: 0.1em;
+  bottom: 0;
+  left: 0;
+  background-color: currentColor;
+  transform: scaleX(0%);
+  transition: all 250ms ease-in-out;
+}
+header > #title:hover > a::after {
+  transform: scaleX(100%);
+}
+
+footer {
+  grid-area: footer;
+  background-color: lightcoral;
+  display: grid;
+  place-items: center;
+}
+.main {
+  grid-area: main;
+  background-color: lightsalmon;
+  display: grid;
+  place-items: center;
+}
